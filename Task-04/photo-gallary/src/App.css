@@ -1,135 +1,117 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #111827;
-  /* Equivalent to bg-gray-900 */
+
 }
 
-/* Container for Loading and Error Messages */
-.status-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #111827;
-}
-
-.loading-text {
-  font-size: 1.5rem;
+.loader {
+  position: absolute;
+  top: 50vh;
+  left: 42.5%;
+  font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
 }
 
-.error-text {
-  font-size: 1.5rem;
+.error {
+  position: absolute;
+  top: 50vh;
+  left: 42.5%;
+  font-size: 1rem;
   font-weight: 600;
   color: #ef4444;
 }
 
-/* Main App Container */
 .app-container {
   background-color: #111827;
   min-height: 100vh;
   padding: 1rem;
 }
 
-/* App Header */
-.app-header {
+.header {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-/* App Title */
-.app-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.05em;
-}
-
-/* Gallery Container */
 .gallery-container {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Photo Grid Layout */
-.photo-grid {
+.header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Photo Card Styling */
-.photo-card {
-  border-radius: 0.5rem;
+.product-card {
+  background-color: #1f1f1f;
+  border-radius: 10px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.photo-card:hover {
-  transform: scale(1.05);
+.product-card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 4px 15px rgba(1, 248, 252, 0.566);
 }
 
-/* Photo Image */
-.photo-img {
+.product-card img {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
 }
 
-/* Photo Info Section */
-.photo-info {
-  padding: 1rem;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  background-color: #111827;
+.product-info {
+  text-align: center;
 }
 
-/* Photo Title Text */
-.photo-title {
-  color: #ffffff;
-  font-size: 0.875rem;
-  text-transform: capitalize;
-  line-height: 1.625;
+.product-info h2 {
+  font-size: 1rem;
+  color: white;
 }
 
-/* Responsive Grid Layouts */
-@media (min-width: 640px) {
-  .app-container {
-    padding: 1.5rem;
-  }
+.product-info .category {
+  color: #aaa;
+  font-size: 0.9rem;
 
-  .app-title {
-    font-size: 3rem;
-  }
-
-  .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
-@media (min-width: 768px) {
-  .app-container {
-    padding: 2rem;
-  }
-
-  .photo-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.product-info .price {
+  font-size: 1.2rem;
+  color: #4caf50;
+  font-weight: bold;
 }
 
-@media (min-width: 1024px) {
-  .photo-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+.product-info button {
+  position: relative;
+  bottom: 0px;
+  padding: 2px;
+  width: 100%;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #ff4c4c, #ff7f40);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.product-info button:hover {
+  font-size: 0.9rem;
+  background: linear-gradient(90deg, #ff7f40, #ff4c4c);
 }
