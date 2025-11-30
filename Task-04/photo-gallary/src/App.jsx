@@ -36,13 +36,7 @@ export default function App() {
           {products &&
             products.slice(0, 35).map((product) => (
               <div className="product-card" key={product.id}>
-                <img
-                  src={
-                    product.images?.[0] ||
-                    "https://images.unsplash.com/photo-1594322436404-5a0526db4d13?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-
+                <img src={product.images?.[0]}/>
                 <div className="product-info">
                   <h2>{product.title}</h2>
                   <p className="category">{product.category?.name}</p>
