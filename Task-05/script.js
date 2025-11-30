@@ -85,7 +85,7 @@ function updateBookState() {
     document.getElementById(id).addEventListener('input', updateBookState);
 });
 
-// ✅ Removed the alert box listener (old bookBtn click)
+// Removed the alert box listener (old bookBtn click)
 // The booking is handled via form submit + EmailJS
 
 renderServices();
@@ -115,23 +115,22 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
 
     emailjs.send("service_laundry", "template_laundry", {
         order_id: orderId,
-        orders: orderList,          // plain text string
-        total: total.toFixed(2),    // flat key
-        user_name: name,            // matches {{user_name}}
-        user_email: email,          // matches {{user_email}}
-        user_phone: phone           // matches {{user_phone}}
-        to_email: email
+        orders: orderList,
+        total: total.toFixed(2),
+        user_name: name,
+        user_email: email,
+        user_phone: phone
     })
-    .then(() => {
-        let msg = document.getElementById("bookingMsg");
-        msg.style.display = "block";
-        msg.textContent = `✅ Thank you ${name}, your booking (#${orderId}) is confirmed.`;
-        document.getElementById("bookingForm").reset();
-        cart.clear();
-        renderServices();
-        renderCart();
-    }, (error) => {
-        alert("❌ Failed to send booking. Please try again.\n" + JSON.stringify(error));
-        console.error(error);
-    });
+        .then(() => {
+            let msg = document.getElementById("bookingMsg");
+            msg.style.display = "block";
+            msg.textContent = `✅ Thank you ${name}, your booking (#${orderId}) is confirmed.`;
+            document.getElementById("bookingForm").reset();
+            cart.clear();
+            renderServices();
+            renderCart();
+        }, (error) => {
+            alert(" Failed to send booking. Please try again.\n" + JSON.stringify(error));
+            console.error(error);
+        });
 });
