@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About | Node.js Server</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Times New Roman', Times, serif;
+        }
+
+        /* Body Gradient Background */
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 50px;
+            color: white;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .hero-image img {
+            width: 350px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>About Node.js</h1>
+            <p>
+                Node.js is an open-source, cross-platform JavaScript runtime environment
+                that allows developers to run JavaScript code outside the browser.
+                It is built on Chrome’s V8 JavaScript engine and is widely used
+                for building fast and scalable network applications.
+            </p>
+            <p>
+                Node.js uses an event-driven, non-blocking I/O model, which makes it
+                efficient and suitable for real-time applications such as chat apps,
+                APIs, and web servers.
+            </p>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://www.edureka.co/blog/wp-content/uploads/2019/08/node-logo.png" alt="Node.js Logo">
+        </div>
+    </section>
+
+</body>
+
+
+</html>
